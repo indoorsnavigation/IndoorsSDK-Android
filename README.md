@@ -14,6 +14,8 @@
 
 ### Gradle
 This library is available [on Artifactory](https://software.indoorsnavi.pro/artifactory/android). To use it, add the following to your `build.gradle`:
+
+#### Groovy
 Step 1. Add the URL of the artifact repository
 ```groovy
     repositories {
