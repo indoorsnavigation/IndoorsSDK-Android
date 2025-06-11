@@ -65,11 +65,10 @@ class ActivityViewModel : ViewModel() {
 
             if(listApplications.isNotEmpty()) {
                 currentApplication = listApplications[0]
+                loadBuildings()
             } else {
                 stateLiveData.setValue(State.ErrorLoading("error loading"))
             }
-
-            loadBuildings()
         }
     }
 
