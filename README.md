@@ -2,17 +2,18 @@
 ## Contents
 
 - [Requirements](#requirements)
-- [Getting Started](#getting_started)
+- [Getting Started](#getting-started)  
 - [Gradle](#gradle)
-- [Using map](#using)
+- [Using map](#using-map)  
 
 ## Requirements
 - Support minimum android sdk 24 API
 
 ## Getting Started
-This library is available [on Artifactory](https://software.indoorsnavi.pro/artifactory/android). To use it, add the following to your `build.gradle`:
+### To get started with indoorsSDK, you can clone an example project from this repository.
 
 ### Gradle
+This library is available [on Artifactory](https://software.indoorsnavi.pro/artifactory/android). To use it, add the following to your `build.gradle`:
 Step 1. Add the URL of the artifact repository
 ```groovy
     repositories {
@@ -100,8 +101,6 @@ Step 3. Add the latest version dependency
     implementation("org.apache.commons:commons-math3:3.6.1")
 ```
 ### Using map
-### To get started with indoorsSDK, clone the example project of this repository
-
 Step 1. Add the INcore initialization to the onCreate method of your Activity
 ```kotlin
 class MainActivity : AppCompatActivity() {
@@ -122,7 +121,6 @@ class MainActivity : AppCompatActivity() {
 
 Step 2. Download the INApplication using authorization by your CLIENT_ID, CLIENT_SECRET
 ```kotlin
-        
     ...
     companion object {
         private const val CLIENT_ID: String = "YOUR-CLIENT_ID"
@@ -149,19 +147,9 @@ Step 2. Download the INApplication using authorization by your CLIENT_ID, CLIENT
     private fun authorizeApplication() {
         INCore.getInstance().service.authorizeApplicationWithClientId(CLIENT_ID, CLIENT_SECRET) { success: Any ->
             if (success as Boolean) {
-                onAuthorizeSuccess()
-            } else {
-                onAuthorizeFailed()
+                 loadApplication()
             }
         }
-    }
-
-    private fun onAuthorizeSuccess() {
-        loadApplication()
-    }
-
-    private fun onAuthorizeFailed() {
-
     }
 
     private fun loadApplication() {
@@ -179,9 +167,7 @@ Step 2. Download the INApplication using authorization by your CLIENT_ID, CLIENT
     }
 
     private fun selectCurrentBuilding(listBuildings: ArrayList<INBuilding>) {
-
         val buildingId = USING_BUILDING_ID
-
         listBuildings?.forEach { building -> if(building.Id == buildingId) {
             currentBuilding = building
             return@forEach
@@ -197,6 +183,7 @@ class MapFragment : INGlobalMapFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+         //implement methods for getting getCurrentBuilding() and getCurrentBuildings() 
         val currentBuilding = getCurrentBuilding()
         val listBuildings = getCurrentBuildings()
 
