@@ -2,19 +2,17 @@
 ## Contents
 
 - [Requirements](#requirements)
-- [Getting Started](#gettingstarted)
+- [Getting Started](#getting_started)
 - [Gradle](#gradle)
 - [Code](#code)
 
 ## Requirements
 - Support minimum android sdk 24 API
-- 
-## Getting Started
 
+## Getting Started
 This library is available [on Artifactory](https://software.indoorsnavi.pro/artifactory/android). To use it, add the following to your `build.gradle`:
 
 ### Gradle
-
 Step 1. Add the URL of the artifact repository
 ```groovy
     repositories {
