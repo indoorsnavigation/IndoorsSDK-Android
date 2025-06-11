@@ -8,6 +8,7 @@
 
 ## Requirements
 - Support minimum android sdk 24 API
+- 
 ## Getting Started
 
 This library is available [on Artifactory](https://software.indoorsnavi.pro/artifactory/android). To use it, add the following to your `build.gradle`:
