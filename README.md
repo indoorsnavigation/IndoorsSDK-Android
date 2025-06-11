@@ -99,7 +99,7 @@ Step 3. Add the latest version dependency
     //math
     implementation("org.apache.commons:commons-math3:3.6.1")
 ```
-### Code
+### Using map
 ### To get started with indoorsSDK, clone the example project of this repository
 
 Step 1. Add the INcore initialization to the onCreate method of your Activity
