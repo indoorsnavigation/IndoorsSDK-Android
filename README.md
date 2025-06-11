@@ -2,7 +2,7 @@
 ## Contents
 
 - [Requirements](#requirements)
-- [Getting Started](#getting)
+- [Getting Started](#getting started)
 - [Gradle](#gradle)
 - [Code](#code)
 
