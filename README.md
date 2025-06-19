@@ -95,10 +95,10 @@ Step 2. Download the INApplication using authorization by your CLIENT_ID, CLIENT
     }
 
     private fun loadBuildings(inApplication: INApplication) {
-        INCore.getInstance().service.loadBuildingsOfApplication(currentApplication,{ resultBuildings: INResponseData ->
+        INCore.getInstance().service.loadBuildingsOfApplication(currentApplication) { resultBuildings: INResponseData ->
             listBuildings = resultBuildings.getData() as ArrayList<INBuilding>
             selectCurrentBuilding()
-        }, { error -> })
+        }
     }
 
     private fun selectCurrentBuilding(listBuildings: ArrayList<INBuilding>) {
