@@ -16,26 +16,16 @@
 This library is available [on Artifactory](https://software.indoorsnavi.pro/artifactory/android). To use it, add the following to your `build.gradle`:
 
 #### Groovy
-Step 1. Add the URL of the artifact repository
+Add the URL of the artifact repository
 ```groovy
-    repositories {
-        ...
-        ivy { 
-            url 'https://software.indoorsnavi.pro/artifactory/android' 
-        }
-    }
+repositories {
+     ...
+     ivy { 
+         url 'https://software.indoorsnavi.pro/artifactory/android' 
+     }
+}
 ```
-Step 2. Add the view binding features
-```groovy
-    android {
-        ...
-         buildFeatures {
-              viewBinding = true
-         }
-    }
-```
-
-Step 3. Add the latest version dependency
+Add the latest version dependency
 ```groovy
 dependencies {
     ...
