@@ -37,9 +37,12 @@ Step 2. Add the view binding features
 
 Step 3. Add the latest version dependency
 ```groovy
+dependencies {
+    ...
     //indoors SDK
-    implementation 'pro.indoorsnavi:indoors-sdk-core:7.0.6'
-    implementation 'pro.indoorsnavi:indoors-sdk-map:7.0.6'
+    implementation 'pro.indoorsnavi:indoors-sdk-core:7.1.0'
+    implementation 'pro.indoorsnavi:indoors-sdk-map:7.1.0'
+}
 ```
 ### Using map
 #### Kotlin
