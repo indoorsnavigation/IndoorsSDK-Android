@@ -49,6 +49,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeINCore() {
         val configuration = INCoreConfiguration.defaultConfiguration(applicationContext)
+        //optional. by default, it will be used https://inservice.indoorsnavi.pro
+        configuration.setServiceUrl("https://your using service");
         INCore.initializeWithConfiguration(applicationContext, configuration)
     }
 }
