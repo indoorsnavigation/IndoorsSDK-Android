@@ -3,7 +3,7 @@ package pro.indoorsnavi.indoorssdkandroid
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import pro.indoorsnavi.indoorssdk.map.views.INGlobalMapFragment
+import pro.indoorsnavi.indoorssdkmap.map.views.INGlobalMapFragment
 
 class MapFragment : INGlobalMapFragment() {
 

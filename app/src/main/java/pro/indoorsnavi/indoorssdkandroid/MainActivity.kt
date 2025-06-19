@@ -8,9 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import pro.indoorsnavi.indoorssdk.core.INCore
-import pro.indoorsnavi.indoorssdk.core.INCoreConfiguration
 import pro.indoorsnavi.indoorssdkandroid.databinding.ActivityMainBinding
+import pro.indoorsnavi.indoorssdkcore.core.INCore
+import pro.indoorsnavi.indoorssdkcore.core.INCoreConfiguration
 
 class MainActivity : AppCompatActivity() {
 

@@ -2,10 +2,10 @@ package pro.indoorsnavi.indoorssdkandroid
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import pro.indoorsnavi.indoorssdk.core.INCore
-import pro.indoorsnavi.indoorssdk.model.INApplication
-import pro.indoorsnavi.indoorssdk.model.INBuilding
-import pro.indoorsnavi.indoorssdk.services.INResponseData
+import pro.indoorsnavi.indoorssdkcore.core.INCore
+import pro.indoorsnavi.indoorssdkcore.model.INApplication
+import pro.indoorsnavi.indoorssdkcore.model.INBuilding
+import pro.indoorsnavi.indoorssdkcore.services.INResponseData
 
 class ActivityViewModel : ViewModel() {
 
@@ -75,7 +75,7 @@ class ActivityViewModel : ViewModel() {
     private fun loadBuildings() {
         stateLiveData.value = State.LoadingBuildings("loading buildings")
 
-        INCore.getInstance().service.loadBuildingsOfApplication(currentApplication,{ resultBuildings: INResponseData ->
+        INCore.getInstance().service.loadBuildingsOfApplication(currentApplication) { resultBuildings: INResponseData ->
 
             val listBuildings = resultBuildings.getData() as ArrayList<INBuilding>
 
@@ -87,7 +87,7 @@ class ActivityViewModel : ViewModel() {
             } else {
                 stateLiveData.setValue(State.ErrorLoading("error loading"))
             }
-        }, { error -> })
+        }
     }
 
     private fun selectCurrentBuilding() {
