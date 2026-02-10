@@ -4,7 +4,7 @@ import android.app.Application
 import pro.indoorsnavi.indoorssdkcore.core.INCore
 import pro.indoorsnavi.indoorssdkcore.core.INCoreConfiguration
 
-class AppClass : Application() {
+class App : Application() {
     override fun onCreate() {
         super.onCreate()
         initializeINCore()
