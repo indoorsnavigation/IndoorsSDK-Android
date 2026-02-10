@@ -33,12 +33,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     // ---indoors sdk---
-    implementation("pro.indoorsnavi:indoors-sdk-core:7.1.0")
-    implementation("pro.indoorsnavi:indoors-sdk-map:7.1.0")
+    implementation("pro.indoorsnavi:indoors-sdk-core:7.8.1")
+    implementation("pro.indoorsnavi:indoors-sdk-map:7.8.1")
 
 }

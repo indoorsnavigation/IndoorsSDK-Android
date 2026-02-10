@@ -9,11 +9,10 @@ import pro.indoorsnavi.indoorssdkcore.services.INResponseData
 
 class ActivityViewModel : ViewModel() {
 
-    // Precnya City
     companion object {
-        private const val BUILDING_ID = 10433L
-        private const val CLIENT_ID: String = "XxlIlEUxExc6hsUk0v7hOiTctyKicAD4RoRIYdJt"
-        private const val CLIENT_SECRET: String = "edELkEYTCWM36ufZv0emgIFPlYfxKHsLgPp7CXPJ8M2LnSap1BP2Bx3EuXrxtib1BH1hisSm6DwKNi80qA7GKbvORPB8L9flD5D5y7wAIrw2BdDlvfwBUARHtexLxWei"
+        private const val BUILDING_ID = 0L // "user building id"
+        private const val CLIENT_ID: String = "YOUR_CLIENT_ID"
+        private const val CLIENT_SECRET: String = "YOUR_CLIENT_SECRET"
     }
 
     private val stateLiveData = MutableLiveData<State>()

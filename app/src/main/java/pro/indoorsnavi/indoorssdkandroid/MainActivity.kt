@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import pro.indoorsnavi.indoorssdkcore.core.INCore
-import pro.indoorsnavi.indoorssdkcore.core.INCoreConfiguration
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,13 +27,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        initializeINCore()
         initViewModel()
-    }
-
-    private fun initializeINCore() {
-        val configuration = INCoreConfiguration.defaultConfiguration(applicationContext)
-        INCore.initializeWithConfiguration(applicationContext, configuration)
     }
 
     private fun initViewModel() {
