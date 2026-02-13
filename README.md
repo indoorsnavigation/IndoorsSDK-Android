@@ -4,7 +4,6 @@
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)  
 - [Gradle](#gradle)
-- [Using map](#using-map)  
 
 ## Requirements
 - Support minimum android sdk 24 API
