@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "pro.indoorsnavi.indoorssdkandroid"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "pro.indoorsnavi.indoorssdkandroid"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -24,6 +24,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -41,7 +42,7 @@ android {
 dependencies {
 
     // ---indoors sdk---
-    implementation("pro.indoorsnavi:indoors-sdk-core:7.8.1")
-    implementation("pro.indoorsnavi:indoors-sdk-map:7.8.1")
+    implementation("pro.indoorsnavi:indoors-sdk-core:7.8.4")
+    implementation("pro.indoorsnavi:indoors-sdk-map:7.8.4")
 
 }

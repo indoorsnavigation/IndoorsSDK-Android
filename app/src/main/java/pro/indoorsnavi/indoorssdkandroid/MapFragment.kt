@@ -34,43 +34,20 @@ class MapFragment : Fragment() {
         val currentBuilding = viewModel.getCurrentBuilding()
         val buildings = viewModel.getCurrentBuildings()
 
-
-        val renderConfig = INRenderConfig()
-        val globalLight = INGlobalLight()
-
-        val territoryId = "3"
-        val windowLightWidth = 10500
-        val windowLightHeight = 8000
-        val mScale = 10.000158f
-
-        renderConfig.limitFPS = null
-
-        globalLight.Id = "global-light-id-$territoryId"
-        globalLight.posLat = 55.65446205378
-        globalLight.posLon = 37.50005908
-        globalLight.posAlt = 350.0
-        globalLight.lookLat = 55.65156958353682
-        globalLight.lookLon = 37.501613311732584
-        globalLight.lookAlt = 0.0
-        globalLight.minLight = 224.0f
-        globalLight.maxLight = 252.0f
-        globalLight.windowLightHeight = (windowLightHeight / mScale)
-        globalLight.windowLightWidth = (windowLightWidth / mScale)
-        globalLight.mapShadowRes = 6100f
-        globalLight.shading3DModelIntensity = 0.3f
-        globalLight.shadowBrightness3DModel = 0.755f
-        globalLight.shadowBrightnessExtrusionPolygon = 0.84f
-        globalLight.minBiasShadow = 0.0002f
-        globalLight.maxBiasShadow = 0.0005f
-        globalLight.ambientColor = floatArrayOf(0.0f, 0.0f, 0.0f)
-        globalLight.isShadowMappingEnabled = true
-        globalLight.drawShadowOnCanvasBuildingId = ""
-
-        renderConfig.addGlobalLightConfigForTerritory(globalLight, territoryId)
-
-
-        binding.indoorsMapView.setMapRenderConfig(renderConfig)
+        binding.indoorsMapView.setMaxFps(60)
         binding.indoorsMapView.setBuildings(buildings)
         binding.indoorsMapView.focusMapCameraToBuilding(currentBuilding)
     }
+
+    override fun onResume() {
+        super.onResume()
+        binding.indoorsMapView.resume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding.indoorsMapView.pause()
+    }
+
+    fun onBackPressed() = binding.indoorsMapView.onBackPressed()
 }
