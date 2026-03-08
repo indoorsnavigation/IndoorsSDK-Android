@@ -42,7 +42,7 @@ android {
 dependencies {
 
     // ---indoors sdk---
-    implementation("pro.indoorsnavi:indoors-sdk-core:7.8.4")
-    implementation("pro.indoorsnavi:indoors-sdk-map:7.8.4")
+    implementation("pro.indoorsnavi:indoors-sdk-core:7.8.6")
+    implementation("pro.indoorsnavi:indoors-sdk-map:7.8.6")
 
 }
