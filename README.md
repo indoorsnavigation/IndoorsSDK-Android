@@ -29,7 +29,7 @@ Add the latest version dependency
 dependencies {
     ...
     //indoors SDK
-    implementation 'pro.indoorsnavi:indoors-sdk-core:7.8.6'
-    implementation 'pro.indoorsnavi:indoors-sdk-map:7.8.6'
+    implementation 'pro.indoorsnavi:indoors-sdk-core:7.8.7'
+    implementation 'pro.indoorsnavi:indoors-sdk-map:7.8.7'
 }
 ```
