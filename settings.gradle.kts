@@ -23,5 +23,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "IndoorsSDKAndroid"
-include(":app")
- 
+include(":examplemap")
+include(":examplenavigation")
