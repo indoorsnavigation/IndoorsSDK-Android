@@ -54,7 +54,7 @@ class NavigationActivity : AppCompatActivity() {
     private fun render(state: State) {
         when (state) {
             is State.AuthorizeSuccess -> {
-                binding.message.text = "Проверка авторизации, подождите пожалуйста ..."
+                binding.message.text = "Checking authorization, please wait..."
             }
             is State.AuthorizeFailed -> {
                 Toast.makeText(this,"Authorize failed", Toast.LENGTH_SHORT).show()
@@ -62,11 +62,11 @@ class NavigationActivity : AppCompatActivity() {
             }
 
             is State.LoadingApplication -> {
-                binding.message.text = "Загрузка приложения, подождите пожалуйста ..."
+                binding.message.text = "Loading application, please wait..."
             }
 
             is State.LoadingBuildings -> {
-                binding.message.text = "Загрузка зданий, подождите пожалуйста ..."
+                binding.message.text = "Loading buildings, please wait..."
             }
 
             is State.SuccessLoad -> {
@@ -79,11 +79,11 @@ class NavigationActivity : AppCompatActivity() {
             }
 
             is State.IndoorsPosition -> {
-                binding.position.text = "Индорс позиция\n\nx: ${state.x}\ny: ${state.y}\nfloorId: ${state.floorId}\ntypeNavigation: ${state.typeNavigation}"
+                binding.position.text = "Indoors position\n\nx: ${state.x}\ny: ${state.y}\nfloorId: ${state.floorId}\ntypeNavigation: ${state.typeNavigation}"
             }
 
             is State.GlobalPosition -> {
-                binding.position.text = "Глобальная позиция\n\nlat: ${state.lat}\nlon: ${state.lon}\ntypeNavigation: ${state.typeNavigation}"
+                binding.position.text = "Global position\n\nlat: ${state.lat}\nlon: ${state.lon}\ntypeNavigation: ${state.typeNavigation}"
             }
 
             is State.None -> {

@@ -38,7 +38,7 @@ class MapActivity : AppCompatActivity() {
     private fun render(state: State) {
         when (state) {
             is State.AuthorizeSuccess -> {
-                findViewById<TextView>(R.id.message).text = "Проверка авторизации, подождите пожалуйста ..."
+                findViewById<TextView>(R.id.message).text = "Checking authorization, please wait..."
             }
             is State.AuthorizeFailed -> {
                 Toast.makeText(this,"Authorize failed", Toast.LENGTH_SHORT).show()
@@ -46,11 +46,11 @@ class MapActivity : AppCompatActivity() {
             }
 
             is State.LoadingApplication -> {
-                findViewById<TextView>(R.id.message).text = "Загрузка приложения, подождите пожалуйста ..."
+                findViewById<TextView>(R.id.message).text = "Loading application, please wait..."
             }
 
             is State.LoadingBuildings -> {
-                findViewById<TextView>(R.id.message).text = "Загрузка зданий, подождите пожалуйста ..."
+                findViewById<TextView>(R.id.message).text = "Loading buildings, please wait..."
             }
 
             is State.SuccessLoad -> {
