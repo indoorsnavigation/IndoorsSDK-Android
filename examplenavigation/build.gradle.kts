@@ -47,5 +47,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("pro.indoorsnavi:indoors-sdk-core:8.0.9")
+    implementation("pro.indoorsnavi:indoors-sdk-core:8.1.0")
 }

@@ -40,8 +40,7 @@ class NavigationActivityViewModel : ViewModel() {
     }
 
     private fun authorizeApplication() {
-        INCore.getInstance().service.authorizeApplicationWithClientId(CLIENT_ID,CLIENT_SECRET)
-        { success: Any ->
+        INCore.getInstance().service.authorizeApplicationWithClientId(CLIENT_ID,CLIENT_SECRET) { success: Any ->
             if (success as Boolean) {
                 onAuthorizeSuccess()
             } else {
@@ -81,31 +80,21 @@ class NavigationActivityViewModel : ViewModel() {
         INCore.getInstance().service.loadBuildingsOfApplication(currentApplication) { resultBuildings: INResponseData ->
             val listBuildings = resultBuildings.getData() as ArrayList<INBuilding>
             if (listBuildings.isNotEmpty()) {
-                buildings = listBuildings
-                loadingBuildingData()
+                loadingBuildingData(listBuildings)
             } else {
                 stateLiveData.setValue(State.ErrorLoading("error loading"))
             }
         }
     }
 
-    private fun loadingBuildingData() {
-        val loadedBuildings = ArrayList<INBuilding>()
-        INCore.getInstance().service.loadBuildingService.loadBuildings(
-            buildings,
-            { layer, building ->  },
-            { layer, building ->
-                /** Этот блок вызывается после успешной загрузки здания **/
-                loadedBuildings.add(building)
+    private fun loadingBuildingData(listBuildings: ArrayList<INBuilding>) {
+        INCore.getInstance().service.loadBuildingService.loadBuildings(listBuildings) { loadedBuildings ->
+            /** All buildings have been loaded **/
+            buildings = loadedBuildings
+            stateLiveData.setValue(State.SuccessLoad("success loading"))
 
-                if(loadedBuildings.size == buildings!!.size) {
-                    /** Все здания загруженны **/
-                    startNavigation()
-
-                    stateLiveData.setValue(State.SuccessLoad("success loading"))
-                }
-            }
-        )
+            startNavigation()
+        }
     }
 
     fun startNavigation() {
@@ -115,7 +104,7 @@ class NavigationActivityViewModel : ViewModel() {
             override fun onPosition(navigation: INNavigation?, userPosition: INUserPosition) {
                 super.onPosition(navigation, userPosition)
 
-                /** INDOORS — позиция, определяемая в помещении с помощью датчиков позиционирования. **/
+                /** INDOORS — a position determined indoors using positioning sensors **/
                 if(userPosition.typeLocation == INUserPosition.TypeLocation.INDOORS) {
                     Log.i("navigation","indoors position " +
                             "x:${userPosition.buildingPosition.X} " +
@@ -130,7 +119,7 @@ class NavigationActivityViewModel : ViewModel() {
                         userPosition.typeNavigation)
                 }
 
-                /** GLOBAL — позиция, определяемая в географических координатах Земли с помощью GNSS. **/
+                /** GLOBAL — a position determined in the Earth's geographic coordinates using GNSS. **/
                 if(userPosition.typeLocation == INUserPosition.TypeLocation.GLOBAL) {
                     Log.i("navigation","global position " +
                             "Lat:${userPosition.globalPosition.Lat} " +
